@@ -1,0 +1,128 @@
+{
+  "jsonapi": {
+    "version": "1.0"
+  },
+  "data": [
+    {
+      "type": "polities",
+      "id": 2,
+      "attributes": {
+        "created_at": "2026-04-02T08:12:48.730282+00:00",
+        "name": "Roman Empire",
+        "type": "empire",
+        "start_date": "0027-01-01 BC",
+        "end_date": "0476-09-04",
+        "description": "Ruled by emperors from Augustus. At its height under Trajan (117 AD) it stretched from Britain to Mesopotamia."
+      },
+      "relationships": {
+        "polity_borders": {
+          "data": [
+            {
+              "type": "polity_borders",
+              "id": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "polity_borders",
+      "id": 2,
+      "attributes": {
+        "geometry": {
+          "crs": {
+            "type": "name",
+            "properties": {
+              "name": "EPSG:4326"
+            }
+          },
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [
+                  -2,
+                  55
+                ],
+                [
+                  4,
+                  52
+                ],
+                [
+                  8,
+                  47
+                ],
+                [
+                  30,
+                  45
+                ],
+                [
+                  38,
+                  42
+                ],
+                [
+                  44,
+                  40
+                ],
+                [
+                  44,
+                  33
+                ],
+                [
+                  37,
+                  29
+                ],
+                [
+                  33,
+                  22
+                ],
+                [
+                  25,
+                  30
+                ],
+                [
+                  13,
+                  30
+                ],
+                [
+                  5,
+                  33
+                ],
+                [
+                  -5,
+                  33
+                ],
+                [
+                  -5,
+                  36
+                ],
+                [
+                  -9,
+                  37
+                ],
+                [
+                  -9,
+                  44
+                ],
+                [
+                  -5,
+                  50
+                ],
+                [
+                  -2,
+                  55
+                ]
+              ]
+            ]
+          ]
+        },
+        "valid_to": "0476-09-04",
+        "polity_id": 2,
+        "created_at": "2026-04-02T08:12:48.730282+00:00",
+        "valid_from": "0027-01-01 BC"
+      }
+    }
+  ]
+}
