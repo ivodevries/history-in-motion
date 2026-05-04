@@ -1,19 +1,19 @@
 # Agents
 
+**Do NOT deploy to production (Cloudflare Workers/Pages) without explicit user consent.**
+
 Commands:
-- Frontend: `yarn dev` (localhost:5173)
-- Backend: `yarn dev` (wrangler)
+- Dev: `yarn dev` (Vite on :5173, Functions on :8787)
+- Build: `yarn build`
+- Test: `yarn test` / `yarn test:run`
+- Deploy: `yarn deploy`
 
-Backend testing: `n/a` (run locally with `yarn dev`)
-
-Lint/typecheck:
-- Frontend: `yarn lint && yarn type-check`
-- Backend: `n/a`
+Lint/typecheck: `yarn lint && yarn type-check`
 
 Files:
-- backend/src/index.ts - Hono API routes
-- frontend/src/main.ts - Vue app entry
-- frontend/src/router/index.ts - Routes
-- frontend/src/views/*.vue - Views
-- frontend/src/components/*.vue - Components
-- backend/src/polity-response.json - Mock data
+- src/main.ts - Vue app entry
+- src/router/index.ts - Routes
+- src/views/*.vue - Views
+- src/components/*.vue - Components
+- functions/api/polities.ts - API routes
+- functions/polity-response.json - Mock data

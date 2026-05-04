@@ -1,14 +1,12 @@
-name: Deploy Backend to Cloudflare Workers
+name: Deploy to Cloudflare Pages
 
 on:
   push:
     branches:
       - main
-    paths:
-      - 'backend/**'
 
 jobs:
-  deploy:
+  test-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -20,16 +18,22 @@ jobs:
         with:
           node-version: '22'
           cache: 'yarn'
-          cache-dependency-path: backend/yarn.lock
 
       - name: Install dependencies
-        working-directory: backend
         run: yarn install --frozen-lockfile
 
-      - name: Deploy to Cloudflare Workers
+      - name: Type check
+        run: yarn type-check
+
+      - name: Run tests
+        run: yarn test:run
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --minify
-          workingDirectory: backend
+          command: pages deploy dist --project-name=history-in-motion

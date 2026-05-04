@@ -1,6 +1,0 @@
-name = "history-in-motion-api"
-compatibility_date = "2024-04-13"
-
-[[routes]]
-pattern = "api.history-in-motion.com/*"
-zone_name = "history-in-motion.com"
